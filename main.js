@@ -37,17 +37,16 @@ var physics = function (rigidBody) {
     if (rigidBody.y + rigidBody.radius < canvas.height - 10) {
         rigidBody.y += rigidBody.velocityY;
         rigidBody.x += rigidBody.velocityX;
-	    rigidBody.rotation = Math.atan2(rigidBody.velocityY, rigidBody.velocityX);
+	    rigidBody.rotation = Math.atan(rigidBody.velocityY / rigidBody.velocityX);
     }
 };
 
 var RigidBody = function (x, y, radius, velocity, rotation) {
-    var radAngle = rotation;
     velocity = velocity || 0;
     this.x = x;
     this.y = y;
-    this.velocityX = Math.cos(radAngle) * velocity;
-    this.velocityY = -Math.sin(radAngle) * velocity;
+    this.velocityX = Math.cos(rotation) * velocity;
+    this.velocityY = -Math.sin(rotation) * velocity;
     this.radius = radius || 0;
     this.rotation = rotation || 0;
 };
