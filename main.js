@@ -1,9 +1,10 @@
 var backgroundImage = new Image();
 backgroundImage.src = './assets/bg.png';
 
-var gravity = 0.1;
+physics.gravity = 0.01;
+arrows.shootCount = 6;
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 1000; i++) {
     balloons.create();
 }
 
