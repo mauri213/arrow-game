@@ -1,20 +1,21 @@
 var backgroundImage = new Image();
-backgroundImage.src = './assets/bg.png';
+backgroundImage.src = "assets/bg.png"; //called a string because it's using alpha-numeric characters
 
-physics.gravity = 0.1;
-arrows.shootCount = 3;
-arrows.spread = 0.2;
 
-for (var i = 0; i < 1000; i++) {
-    balloons.create();
+for(var i = 0; i < 1000; i = i +1) {
+	balloons.create();
 }
 
-var update = function () {
-    render(0, 0, backgroundImage);
-    player.update();
-    arrows.update();
-    balloons.update();
-    collider.update();
-};
 
-loop(update);
+
+function step () {
+	render(0, 0, backgroundImage);
+	player.update();
+	balloons.update();
+	arrows.update();
+	collider.update();
+}
+
+
+	
+loop(step);

@@ -9,7 +9,7 @@ var currentArrows = [];
 var arrows = {
 
     // This property holds the number of arrows we fire with each shoot() call.
-    shootCount: 1,
+    shootCount: 100,
 
     // This property holds the amount of distance between each arrow when
     // firing multiple arrows.
